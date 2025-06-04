@@ -40,6 +40,17 @@ UVM_Memory_Verification_Environment/
 
 ---
 
+## 🚀 How It Works (UVM)
+
+1. **Sequence** → sequencer → **Driver**
+2. **Driver** → DUT via Interface
+3. **Monitor** → analysis port → **Scoreboard**
+4. **Scoreboard** compares expected vs actual output
+
+---
+
+
+
 ## ✅ Key Features
 
 - 🧱 Modular and reusable UVM testbench architecture
