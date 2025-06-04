@@ -8,20 +8,27 @@ This project implements a **Universal Verification Methodology (UVM)**-based tes
 
 ## 📁 Project Structure
 
-| File                  | Description                                           |
-|-----------------------|-------------------------------------------------------|
-| `mem_if.sv`           | SystemVerilog interface for DUT and testbench         |
-| `mem_dut.sv`          | Design Under Test - Simple memory block               |
-| `mem_seq_item.sv`     | Defines memory transaction (addr, wr_en, rd_en, etc.) |
-| `mem_sequence.sv`     | Generates memory read/write sequences                 |
-| `mem_driver.sv`       | Drives transactions to DUT                            |
-| `mem_monitor.sv`      | Captures DUT behavior and sends to scoreboard         |
-| `mem_scoreboard.sv`   | Compares expected vs actual results                   |
-| `mem_agent.sv`        | Wraps driver, monitor, and sequencer into one unit    |
-| `mem_env.sv`          | Instantiates the agent and scoreboard                 |
-| `mem_test.sv`         | Top-level test that runs the environment              |
-| `mem_base_test.sv`    | Adds fatal/error check for test result                |
-| `mem_top.sv`          | Testbench top module, connects DUT and interface      |
+```text
+UVM_Memory_Verification_Environment/
+├── src/
+│   ├── interface.sv          # SystemVerilog interface for DUT and testbench
+│   ├── sequence_item.sv      # Defines memory transaction (addr, wr_en, rd_en, etc.)
+│   ├── sequence.sv           # Generates memory read/write sequences
+│   ├── sequencer.sv          # Coordinates and controls sequence generation.
+│   ├── driver.sv             # Drives transactions to DUT
+│   ├── monitor.sv            # Captures DUT behavior and sends to scoreboard
+│   ├── scoreboard.sv         # Verifies correctness
+│   ├── agent.sv              # Wraps driver, monitor, and sequencer into one unit
+│   ├── enviroment.sv         # Instantiates the agent and scoreboard
+│   ├── mem_base_test.sv      # Adds fatal/error check for test result
+│   ├── rd_wr_test.sv         # Top-level test that runs the environment
+│   ├── design.sv             # Design Under Test - Simple memory block
+│   ├── 
+├── testbench/
+│   └── testbench.sv          # Top-level testbench
+├── README.md
+└── .gitignore
+```
 
 ---
 
@@ -43,9 +50,37 @@ This project implements a **Universal Verification Methodology (UVM)**-based tes
 
 ---
 
+## Requirements
+- SystemVerilog simulator with UVM support, e.g.:  
+  - Synopsys VCS  
+  - Cadence Xcelium  
+  - Mentor QuestaSim  
+- UVM library version 1.2 or later  
+- Operating System: Linux, Windows, or macOS  
+- Basic familiarity with SystemVerilog and UVM  
+- Optional: Python (for automation scripts and coverage analysis)  
+
+---
+
+## Getting Started
+1. Clone the repository:  
+   `git clone https://github.com/akramkhan292/UVM_Memory_Verification_Environment.git`  
+2. Setup your simulator environment and licensing.  
+3. Compile source and testbench files per your simulator’s guidelines.  
+4. Run simulations using provided scripts or manual commands.  
+5. Modify or add test cases inside the `tests` directory as needed. 
+
+---
+## Contact
+Mohd Akram Khan  
+GitHub: [https://github.com/akramkhan292](https://github.com/akramkhan292)
+
+---
+
 ## 👤 Author
 
 **Mohd Akram Khan**  
+
 
 ---
 
